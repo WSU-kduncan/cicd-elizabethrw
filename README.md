@@ -1,7 +1,10 @@
 Part 1 - Dockerize it
 ---
+
 Overview: Running a website continuously using a docker container.
+
 Source for index.html: Project 5's index.srv1.html.
+
 Source for Dockerfile: https://hub.docker.com/_/httpd
 1. How you installed docker + dependencies: Used the following commands: "sudo apt update", "sudo apt install apt-transport-https ca-certificates curl software-properties-common", "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -", "sudo add-apt-repository "deb [arch-apt-repository] https://download.docker.com/linux/ubuntu bionic stable"". Source: geekflare.com/docker-installation-guide/
 2. How to build the container: Use the command "sudo docker build -t my-apache2" Source: hub.docker.com/_/httpd
