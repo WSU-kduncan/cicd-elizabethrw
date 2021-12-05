@@ -15,7 +15,7 @@ Part 2 - GitHub Actions and DockerHub
 ---
 
 1. Process to create DockerHub public repo: I created a free account, clicked "Create Repository", named my repository "project-6-repo", and then created my repository.
-2. Allow DockerHub authentication via CLI using Dockhub credentials:
+2. Allow DockerHub authentication via CLI using Dockhub credentials: Create a Docker token by going to "Account Settings", then "Security", then click "New Access Token". This token can now be used for authentication / login instead of a password.
 3. Configure GitHub Secrets
  - What credentials are needed: Username and password for Docker.
  - How to set secrets and secret names: Create a "secrets" environment by going to "Settings", "Environments", then "Create Environment" with the name "secrets" (or any preferred name). Then click "Add Secret" and add your docker username / password under secret labels.
@@ -25,5 +25,5 @@ Part 2 - GitHub Actions and DockerHub
 Part 3 - Deployment
 ---
 
-1. How to pull the image: 
-2. How to run the container:
+1. How to pull the image: Use the command "sudo docker pull elizabethrw/project-6-repo".
+2. How to run the container: Use the command "sudo docker run -dit --name websiteTest elizabethrw/project-6-repo".
