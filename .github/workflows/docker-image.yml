@@ -1,0 +1,27 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Docker
+      env:
+        SECRET_DOCKER_USER: ${{secrets.SECRET_DOCKER_USER}}
+        SECRET_DOCKER_PASSWORD: ${{secrets.SECRET_DOCKER_PASSWORD}}
+      run:
+        docker login -u $SECRET_DOCKER_USER -p $SECRET_DOCKER_PASSWORD
+    - name: Build the Docker image
+      run: sudo docker build . --file Dockerfile --tag elizabethrw/project-6-repo
+      
+    - name: Docker Push
+      run: sudo docker push ${{secrets.SECRET_DOCKER_USER}}/project-6-repo
