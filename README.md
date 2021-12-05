@@ -18,12 +18,12 @@ Part 2 - GitHub Actions and DockerHub
 2. Allow DockerHub authentication via CLI using Dockhub credentials:
 3. Configure GitHub Secrets
  - What credentials are needed: Username and password for Docker.
- - How to set secrets and secret names: Create a "secrets" environment by going to "Settings", "Environmetns", then "Create Environment" with the name "secrets" (or any preferred name). Then click "Add Secret" and add your docker username / password under secret labels.
+ - How to set secrets and secret names: Create a "secrets" environment by going to "Settings", "Environments", then "Create Environment" with the name "secrets" (or any preferred name). Then click "Add Secret" and add your docker username / password under secret labels.
 4. Configure GitHub Workflow
- - Variables to change: I created the .yml file in .github/workflows using a default .yml docker file offered by GitHub under the "Actions" tab.
+ - Variables to change: I created the .yml file in .github/workflows using a default .yml docker file offered by GitHub under the "Actions" tab. I then created an environment that holds the values of the correct username / password from my evironment named secrets that I made before using these lines (separated by /'s): "env: / SECRET_DOCKER_USER: ${{secrets.SECRET_DOCKER_USER}} / SECRET_DOCKER_PASSWORD: ${{secrets.SECRET_DOCKER_PASSWORD}}". I also gave it a place to build in using the line: "run: sudo docker build . --file Dockerfile --tag cicd-elizabethrw/project-6-repo" (the base of this was given by the default .yml docker file). I also added a command to push to DockerHub after building using "run: sudo docker push ${{secrets.SECRET_DOCKER_USER}}/project-6-repo". The .yml file itselfcan be viewed in .github/workflows, and it is titled "docker-image.yml" (name that was given by the default .yml docker file).
 
 Part 3 - Deployment
 ---
 
-1. How to pull the image:
+1. How to pull the image: 
 2. How to run the container:
