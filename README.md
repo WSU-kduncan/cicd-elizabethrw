@@ -17,10 +17,10 @@ Part 2 - GitHub Actions and DockerHub
 1. Process to create DockerHub public repo: I created a free account, clicked "Create Repository", named my repository "project-6-repo", and then created my repository.
 2. Allow DockerHub authentication via CLI using Dockhub credentials:
 3. Configure GitHub Secrets
- - What credentials are needed:
- - How to set secrets and secret names:
+ - What credentials are needed: Username and password for Docker.
+ - How to set secrets and secret names: Create a "secrets" environment by going to "Settings", "Environmetns", then "Create Environment" with the name "secrets" (or any preferred name). Then click "Add Secret" and add your docker username / password under secret labels.
 4. Configure GitHub Workflow
- - Variables to change:
+ - Variables to change: I created the .yml file in .github/workflows using a default .yml docker file offered by GitHub under the "Actions" tab.
 
 Part 3 - Deployment
 ---
